@@ -31,8 +31,8 @@
                         <i class="fa fa-user" aria-hidden="true"></i> {{ auth()->user()->username}}
                     </div>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
                         <a class="dropdown-item" href="/profile"><i class="fa fa-eye" aria-hidden="true"></i> Show Profile</a>
+                        <a class="dropdown-item" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
                     </div>
                 </li>
             </ul>

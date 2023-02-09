@@ -17,7 +17,7 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('major_id');
-            $table->string('nim');
+            $table->string('nim')->unique();
             $table->string('nama');
             $table->integer('semester');
             $table->date('tanggal_masuk');

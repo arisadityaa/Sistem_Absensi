@@ -18,16 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('jurusan.list_jurusan');
-// });
-
 Route::view('/', 'home');
 Route::get('/profile', 'ProfileController@show');
 Route::get('/login', 'LoginController@index')->name('login')->middleware('guest');
 Route::get('/register', 'RegisterController@index')->middleware('guest');
 Route::get('/profile/edit/{id}', 'ProfileController@edit');
 Route::post('/profile/update/{id}', 'ProfileController@update');
+Route::get('/profile/image/change/{id}', 'ProfileController@edit_image');
+Route::post('/profile/image/update/{id}', 'ProfileController@update_image');
 
 Route::post('/register', 'RegisterController@store');
 Route::post('/login', 'LoginController@authenticate');

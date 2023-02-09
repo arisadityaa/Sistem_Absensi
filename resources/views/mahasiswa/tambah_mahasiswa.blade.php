@@ -39,7 +39,8 @@
                         @endforeach
                     @else
                         @foreach ($majors as $major)
-                            <option {{(old('jurusan') == $major->id) ? 'selected="selected"' : ""}} value="{{ $major->id }}">{{ $major->jurusan }}</option>
+                            <option {{ old('jurusan') == $major->id ? 'selected="selected"' : '' }}
+                                value="{{ $major->id }}">{{ $major->jurusan }}</option>
                         @endforeach
                     @endif
                 </select>
@@ -58,7 +59,9 @@
                         @endfor
                     @else
                         @for ($i = 1; $i <= 14; $i++)
-                            <option value="{{ $i }}" {{(old('semester') == $i) ? 'selected="selected"' : ""}}>Semester {{ $i }}</option>
+                            <option value="{{ $i }}"
+                                {{ old('semester') == $i ? 'selected="selected"' : '' }}>Semester {{ $i }}
+                            </option>
                         @endfor
                     @endif
 
@@ -71,6 +74,9 @@
                 <label for="tanggal_masuk">Tanggal Masuk</label>
                 <input type="date" name="tanggal_masuk" class="form-control @error('tanggal_masuk') is-invalid @enderror"
                     id="tanggal_masuk" value="{{ date('Y-m-d') }}">
+                @error('tanggal_masuk')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
             </div>
             <button class="btn btn-success" type="submit"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
             <a href="/mahasiswa" class="btn btn-warning"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>
